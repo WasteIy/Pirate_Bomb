@@ -1,7 +1,7 @@
 [gd_scene load_steps=50 format=3 uid="uid://d0yqldctbt5wg"]
 
 [ext_resource type="Texture2D" uid="uid://x5lh3fcb5tts" path="res://sprites/1-Player-Bomb Guy/1-Idle/1.png" id="1_7cime"]
-[ext_resource type="Script" path="res://scenes/player.gd" id="1_7ht0v"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_7ht0v"]
 [ext_resource type="Texture2D" uid="uid://c4s7hahooc3ac" path="res://sprites/1-Player-Bomb Guy/5-Fall/1.png" id="2_6fljt"]
 [ext_resource type="Texture2D" uid="uid://coir38cit2j8q" path="res://sprites/1-Player-Bomb Guy/1-Idle/2.png" id="2_imlay"]
 [ext_resource type="Texture2D" uid="uid://d038o3mb8nogh" path="res://sprites/1-Player-Bomb Guy/5-Fall/2.png" id="3_fqccs"]
@@ -217,9 +217,8 @@ script = ExtResource("1_7ht0v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x0lbc")
-animation = &"idle"
+animation = &"fall"
 autoplay = "idle"
-frame_progress = 0.737767
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
