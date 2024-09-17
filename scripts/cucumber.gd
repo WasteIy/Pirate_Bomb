@@ -32,18 +32,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			if sprite.animation != "run":
 				sprite.play("run")
-	else:
-		if velocity.y < 0:
-			if sprite.animation != "jump":
-				sprite.play("jump")
-		else:
-			if sprite.animation != "fall":
-				sprite.play("fall")
 	if direction > 0:
 		sprite.flip_h = true
 	elif direction < 0:
 		sprite.flip_h = false
-
-func _on_area_2d_body_entered(body: RigidBody2D) -> void:
-	if body.name == "Bomb":
-		print("Aaaa")

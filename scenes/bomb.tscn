@@ -104,6 +104,7 @@ animations = [{
 radius = 16.0
 
 [node name="Bomb" type="RigidBody2D"]
+z_index = 5
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_ospgb")

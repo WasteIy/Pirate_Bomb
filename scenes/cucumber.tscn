@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://drfnwg5m3ypkk"]
+[gd_scene load_steps=64 format=3 uid="uid://cnu8785yr8tlf"]
 
 [ext_resource type="Script" path="res://scripts/cucumber.gd" id="1_1xxnh"]
 [ext_resource type="Texture2D" uid="uid://rtlwt47h0qm6" path="res://sprites/3-Enemy-Cucumber/8-Blow the wick/1.png" id="1_ii4lp"]
@@ -276,6 +276,7 @@ position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_wknj0")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 2)

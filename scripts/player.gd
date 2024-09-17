@@ -38,11 +38,11 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		sprite.flip_h = true
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_released("bomb"):
 		throw_projectile()
 
 func throw_projectile():
-	var bomb_scene = bomb_scene.instantiate()
-	bomb_scene.position = global_position
-	get_parent().add_child(bomb_scene)
+	var bomb = bomb_scene.instantiate()
+	bomb.position = global_position
+	get_parent().add_child(bomb)
