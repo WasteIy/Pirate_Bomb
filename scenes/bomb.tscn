@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://bi4apqxng6gw"]
 
-[ext_resource type="Script" path="res://scenes/bomb.gd" id="1_ospgb"]
+[ext_resource type="Script" path="res://scripts/bomb.gd" id="1_ospgb"]
 [ext_resource type="Texture2D" uid="uid://ceh84c2d5f8ro" path="res://sprites/7-Objects/1-BOMB/1-Bomb Off/1.png" id="1_oxf3h"]
 [ext_resource type="Texture2D" uid="uid://d367bntiwvp3b" path="res://sprites/7-Objects/1-BOMB/2-Bomb On/1.png" id="2_anwvn"]
 [ext_resource type="Texture2D" uid="uid://d1w1ruahomp07" path="res://sprites/7-Objects/1-BOMB/2-Bomb On/2.png" id="3_v41wh"]

@@ -1,17 +1,23 @@
 extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var ray_cast_left: RayCast2D = $RayCast2DLeft
+@onready var ray_cast_right: RayCast2D = $RayCast2DRight
 
-var SPEED = 130.0
+
+const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
-
-var bomb_scene = preload("res://scenes/bomb.tscn")
+@onready var direction = -1
 
 func _physics_process(delta: float) -> void:
+	
+	if ray_cast_right.is_colliding():
+		direction = -1
+	if ray_cast_left.is_colliding():
+		direction = 1
+		
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	var direction = Input.get_axis("left", "right")
+		
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -34,15 +40,10 @@ func _physics_process(delta: float) -> void:
 			if sprite.animation != "fall":
 				sprite.play("fall")
 	if direction > 0:
-		sprite.flip_h = false
-	elif direction < 0:
 		sprite.flip_h = true
+	elif direction < 0:
+		sprite.flip_h = false
 
-func _process(delta):
-	if Input.is_action_just_released("bomb"):
-		throw_projectile()
-
-func throw_projectile():
-	var bomb_scene = bomb_scene.instantiate()
-	bomb_scene.position = global_position
-	get_parent().add_child(bomb_scene)
+func _on_area_2d_body_entered(body: RigidBody2D) -> void:
+	if body.name == "Bomb":
+		print("Aaaa")
