@@ -6,8 +6,8 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 const THRESHOLD = 40
-var bomb : RigidBody2D = null
 
+var bomb : RigidBody2D = null
 var direction = 0
 var bomb_position: Vector2 = Vector2.ZERO
 var has_target: bool = false
@@ -15,9 +15,7 @@ var has_target: bool = false
 func _physics_process(delta: float) -> void:
 	if has_target:
 		move_towards_bomb(delta)
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
+
 	move_and_slide()
 	update_animation()
 	
@@ -39,7 +37,7 @@ func move_towards_bomb(delta: float) -> void:
 		sprite.play("blow")
 		
 func update_animation():
-		if abs(velocity.x) > 0:
+		if (velocity.x) != 0:
 			sprite.play("run")
 		if velocity.x > 0:
 			sprite.flip_h = true
@@ -48,4 +46,5 @@ func update_animation():
 	
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "blow":
+		bomb.fuse = false
 		sprite.play("idle")

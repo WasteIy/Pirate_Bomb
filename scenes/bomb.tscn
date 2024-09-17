@@ -28,9 +28,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_oxf3h")
 }],
-"loop": true,
+"loop": false,
 "name": &"bomb_off",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -111,7 +111,7 @@ script = ExtResource("1_ospgb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h6yur")
-animation = &"bomb_on"
+animation = &"bomb_off"
 autoplay = "bomb_on"
 
 [node name="Timer" type="Timer" parent="."]
