@@ -37,6 +37,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func move_towards_bomb(_delta: float) -> void:
 	var direction_bomb = (bomb_position - position).normalized()
 	velocity.x = direction_bomb.x * SPEED
+	if position.distance_to(bomb_position) < THRESHOLD:
+		has_target = false
+		velocity = Vector2.ZERO
+		sprite.play("blow")
 func update_animation():
 	if dead == false:
 			if velocity.y > 0:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://b6f8guuxjkv0l"]
+[gd_scene load_steps=9 format=4 uid="uid://b6f8guuxjkv0l"]
 
 [ext_resource type="PackedScene" uid="uid://d0yqldctbt5wg" path="res://scenes/player.tscn" id="1_sucrp"]
 [ext_resource type="Texture2D" uid="uid://demdqf2cxq88e" path="res://sprites/8-Tile-Sets/Fixed Tile-Sets (64-64).png" id="2_8ctr7"]
 [ext_resource type="PackedScene" uid="uid://cnu8785yr8tlf" path="res://scenes/cucumber.tscn" id="3_sqox7"]
+[ext_resource type="PackedScene" uid="uid://b21nu2xrrswbn" path="res://scenes/bald_pirate.tscn" id="4_xqjuc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_roywi"]
 texture = ExtResource("2_8ctr7")
@@ -1300,3 +1301,6 @@ tile_set = SubResource("TileSet_dad1v")
 
 [node name="Cucumber" parent="." instance=ExtResource("3_sqox7")]
 position = Vector2(196, -29)
+
+[node name="Bald Pirate" parent="." instance=ExtResource("4_xqjuc")]
+position = Vector2(-155, -28)

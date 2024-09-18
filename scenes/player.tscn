@@ -213,7 +213,7 @@ animations = [{
 size = Vector2(44, 57)
 
 [node name="Player" type="CharacterBody2D"]
-z_index = 4
+z_index = 3
 collision_layer = 2
 script = ExtResource("1_7ht0v")
 
@@ -223,6 +223,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 z_index = 10
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_61qwx")
