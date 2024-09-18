@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bi4apqxng6gw"]
+[gd_scene load_steps=25 format=3 uid="uid://bi4apqxng6gw"]
 
 [ext_resource type="Script" path="res://scripts/bomb.gd" id="1_ospgb"]
 [ext_resource type="Texture2D" uid="uid://ceh84c2d5f8ro" path="res://sprites/7-Objects/1-BOMB/1-Bomb Off/1.png" id="1_oxf3h"]
@@ -103,6 +103,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_y38f5"]
 radius = 16.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qi00t"]
+radius = 52.0
+
 [node name="Bomb" type="RigidBody2D"]
 z_index = 5
 collision_layer = 2
@@ -110,8 +113,9 @@ collision_mask = 2
 script = ExtResource("1_ospgb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_h6yur")
-animation = &"bomb_off"
+animation = &"bomb_on"
 autoplay = "bomb_on"
 
 [node name="Timer" type="Timer" parent="."]
@@ -119,8 +123,19 @@ wait_time = 3.0
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 19)
+visible = false
+position = Vector2(0, 19)
 shape = SubResource("CircleShape2D_y38f5")
+
+[node name="Explosion" type="Area2D" parent="."]
+collision_mask = 8
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion"]
+visible = false
+position = Vector2(1, 9)
+shape = SubResource("CircleShape2D_qi00t")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Explosion" to="." method="_on_explosion_body_entered"]

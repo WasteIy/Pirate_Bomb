@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cnu8785yr8tlf"]
+[gd_scene load_steps=76 format=3 uid="uid://cnu8785yr8tlf"]
 
 [ext_resource type="Script" path="res://scripts/cucumber.gd" id="1_1xxnh"]
 [ext_resource type="Texture2D" uid="uid://rtlwt47h0qm6" path="res://sprites/3-Enemy-Cucumber/8-Blow the wick/1.png" id="1_ii4lp"]
@@ -14,17 +14,29 @@
 [ext_resource type="Texture2D" uid="uid://cppvaya16ec16" path="res://sprites/3-Enemy-Cucumber/8-Blow the wick/11.png" id="11_f8fc3"]
 [ext_resource type="Texture2D" uid="uid://bc3qtswvhcjqy" path="res://sprites/3-Enemy-Cucumber/1-Idle/1.png" id="12_dv1f0"]
 [ext_resource type="Texture2D" uid="uid://dkdwfjxg3fw5o" path="res://sprites/3-Enemy-Cucumber/1-Idle/2.png" id="13_sq68d"]
+[ext_resource type="Texture2D" uid="uid://dnhctpp5tuy3b" path="res://sprites/3-Enemy-Cucumber/11-Dead Ground/1.png" id="13_v808x"]
 [ext_resource type="Texture2D" uid="uid://ckbotc11csuhq" path="res://sprites/3-Enemy-Cucumber/1-Idle/3.png" id="14_olikr"]
+[ext_resource type="Texture2D" uid="uid://bn1hcgdjlsukc" path="res://sprites/3-Enemy-Cucumber/11-Dead Ground/2.png" id="14_s6mne"]
 [ext_resource type="Texture2D" uid="uid://fw15i703eeb3" path="res://sprites/3-Enemy-Cucumber/1-Idle/4.png" id="15_0r7i2"]
+[ext_resource type="Texture2D" uid="uid://bfd6r0obca747" path="res://sprites/3-Enemy-Cucumber/11-Dead Ground/3.png" id="15_vn37c"]
 [ext_resource type="Texture2D" uid="uid://cb6eaf6564kya" path="res://sprites/3-Enemy-Cucumber/1-Idle/5.png" id="16_53mk4"]
+[ext_resource type="Texture2D" uid="uid://b86d831j62yrw" path="res://sprites/3-Enemy-Cucumber/11-Dead Ground/4.png" id="16_k1bxs"]
 [ext_resource type="Texture2D" uid="uid://g8rhqlhld8ms" path="res://sprites/3-Enemy-Cucumber/1-Idle/6.png" id="17_7143c"]
+[ext_resource type="Texture2D" uid="uid://c7xjinhfq2pvt" path="res://sprites/3-Enemy-Cucumber/10-Dead Hit/1.png" id="17_p45hc"]
+[ext_resource type="Texture2D" uid="uid://21uttpobdxun" path="res://sprites/3-Enemy-Cucumber/10-Dead Hit/2.png" id="18_5q5bn"]
 [ext_resource type="Texture2D" uid="uid://dc120gtgoc76u" path="res://sprites/3-Enemy-Cucumber/1-Idle/7.png" id="18_dgtld"]
+[ext_resource type="Texture2D" uid="uid://cltxgxurg0yfe" path="res://sprites/3-Enemy-Cucumber/10-Dead Hit/3.png" id="19_tpmo7"]
 [ext_resource type="Texture2D" uid="uid://c5kq4i81mko1a" path="res://sprites/3-Enemy-Cucumber/1-Idle/8.png" id="19_wiaaq"]
+[ext_resource type="Texture2D" uid="uid://dc3pej61gn3l" path="res://sprites/3-Enemy-Cucumber/10-Dead Hit/4.png" id="20_p78lx"]
 [ext_resource type="Texture2D" uid="uid://c7fwagwyv2wha" path="res://sprites/3-Enemy-Cucumber/1-Idle/9.png" id="20_xaias"]
 [ext_resource type="Texture2D" uid="uid://b8yty5wuslet3" path="res://sprites/3-Enemy-Cucumber/1-Idle/10.png" id="21_euqwq"]
+[ext_resource type="Texture2D" uid="uid://cjpq21go47txt" path="res://sprites/3-Enemy-Cucumber/10-Dead Hit/5.png" id="21_toybk"]
+[ext_resource type="Texture2D" uid="uid://dw1x1n1425mxy" path="res://sprites/3-Enemy-Cucumber/10-Dead Hit/6.png" id="22_0hdy8"]
 [ext_resource type="Texture2D" uid="uid://ds1t5418rr1xq" path="res://sprites/3-Enemy-Cucumber/1-Idle/11.png" id="22_sreui"]
 [ext_resource type="Texture2D" uid="uid://c3v6cokkbt6nt" path="res://sprites/3-Enemy-Cucumber/1-Idle/12.png" id="23_30nir"]
+[ext_resource type="Texture2D" uid="uid://ckolhc3hitxgo" path="res://sprites/3-Enemy-Cucumber/5-Fall/1.png" id="23_uqu5v"]
 [ext_resource type="Texture2D" uid="uid://cimiyvfy6aw7c" path="res://sprites/3-Enemy-Cucumber/1-Idle/13.png" id="24_siun3"]
+[ext_resource type="Texture2D" uid="uid://ck04q6qftgc2b" path="res://sprites/3-Enemy-Cucumber/5-Fall/2.png" id="24_vv4un"]
 [ext_resource type="Texture2D" uid="uid://bq6ljkjp6furi" path="res://sprites/3-Enemy-Cucumber/1-Idle/14.png" id="25_yn3cn"]
 [ext_resource type="Texture2D" uid="uid://btcui3vssdlrk" path="res://sprites/3-Enemy-Cucumber/1-Idle/15.png" id="26_8wlax"]
 [ext_resource type="Texture2D" uid="uid://ca2o2ax4o0ar0" path="res://sprites/3-Enemy-Cucumber/1-Idle/16.png" id="27_2o806"]
@@ -99,6 +111,57 @@ animations = [{
 }],
 "loop": false,
 "name": &"blow",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_v808x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_s6mne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vn37c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_k1bxs")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_p45hc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_5q5bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_tpmo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_p78lx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_toybk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_0hdy8")
+}],
+"loop": false,
+"name": &"dead hit",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_uqu5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_vv4un")
+}],
+"loop": false,
+"name": &"fall",
 "speed": 20.0
 }, {
 "frames": [{
@@ -263,13 +326,15 @@ size = Vector2(24, 61)
 size = Vector2(798, 61)
 
 [node name="Cucumber" type="CharacterBody2D"]
+collision_layer = 9
 script = ExtResource("1_1xxnh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_liqug")
-animation = &"idle"
+animation = &"fall"
 autoplay = "idle"
-frame_progress = 0.201433
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -280,6 +345,7 @@ shape = SubResource("RectangleShape2D_wknj0")
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_slfol")
 

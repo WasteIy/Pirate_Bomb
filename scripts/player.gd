@@ -34,11 +34,9 @@ func throw_projectile():
 func update_animation():
 	if is_on_floor():
 		if direction == 0:
-			if sprite.animation != "idle":
 				sprite.play("idle")
 		else:
-			if sprite.animation != "run":
-				sprite.play("run")
+			sprite.play("run")
 	else:
 		if velocity.y < 0:
 			if sprite.animation != "jump":

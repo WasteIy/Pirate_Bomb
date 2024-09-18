@@ -804,4 +804,4 @@ tile_set = SubResource("TileSet_dad1v")
 [node name="Background" type="TileMapLayer" parent="Map"]
 
 [node name="Cucumber" parent="." instance=ExtResource("3_sqox7")]
-position = Vector2(178, -27)
+position = Vector2(129, -211)
