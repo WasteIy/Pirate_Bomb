@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Explodable
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var area: Area2D = $Area2D
+@onready var area: Area2D = $Vision
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
@@ -29,11 +29,10 @@ func _physics_process(delta: float) -> void:
 	update_animation()
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Bomb":
-		print("Bomb")
-		bomb = body
-		bomb_position = bomb.position
-		has_target = true
+	print("Bomb")
+	bomb = body
+	bomb_position = bomb.position
+	has_target = true
 
 func move_towards_bomb(_delta: float) -> void:
 	var direction_bomb = (bomb_position - position).normalized()

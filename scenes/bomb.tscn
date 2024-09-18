@@ -111,8 +111,7 @@ radius = 72.0
 
 [node name="Bomb" type="RigidBody2D"]
 z_index = 5
-collision_layer = 2
-collision_mask = 2
+collision_layer = 8
 script = ExtResource("1_ospgb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -133,7 +132,8 @@ shape = SubResource("CircleShape2D_y38f5")
 
 [node name="Explosion" type="Area2D" parent="."]
 z_index = 6
-collision_mask = 8
+collision_layer = 0
+collision_mask = 4
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion"]
@@ -144,6 +144,8 @@ shape = SubResource("CircleShape2D_qi00t")
 debug_color = Color(1, 0.00392157, 0, 0.419608)
 
 [node name="Interaction" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
 position = Vector2(0, 16)
