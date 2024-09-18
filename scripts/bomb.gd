@@ -20,8 +20,6 @@ func _on_timer_timeout() -> void:
 			queue_free()
 
 func bomb_explosion():
-	$Explosion/CollisionShape2D.visible = true
-	$Interaction/CollisionShape2D. visible = false
 	explosion.monitoring = true
 
 func _on_explosion_body_entered(body: Node2D) -> void:

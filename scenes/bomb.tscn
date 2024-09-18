@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bi4apqxng6gw"]
+[gd_scene load_steps=25 format=3 uid="uid://bi4apqxng6gw"]
 
 [ext_resource type="Script" path="res://scripts/bomb.gd" id="1_ospgb"]
 [ext_resource type="Texture2D" uid="uid://ceh84c2d5f8ro" path="res://sprites/7-Objects/1-BOMB/1-Bomb Off/1.png" id="1_oxf3h"]
@@ -106,9 +106,6 @@ radius = 16.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_qi00t"]
 radius = 52.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vje1t"]
-radius = 25.2982
-
 [node name="Bomb" type="RigidBody2D"]
 z_index = 5
 collision_layer = 8
@@ -125,32 +122,20 @@ wait_time = 3.0
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 z_index = 10
 position = Vector2(0, 19)
 shape = SubResource("CircleShape2D_y38f5")
 
 [node name="Explosion" type="Area2D" parent="."]
-z_index = 6
+z_index = 10
 collision_layer = 0
 collision_mask = 4
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion"]
-visible = false
-z_index = 10
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_qi00t")
-debug_color = Color(1, 0.00392157, 0, 0.419608)
-
-[node name="Interaction" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
-z_index = 4
-position = Vector2(0, 16)
-shape = SubResource("CircleShape2D_vje1t")
+disabled = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
