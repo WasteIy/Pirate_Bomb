@@ -5,22 +5,15 @@ extends Area2D
 
 var entity = null
 var direction = null
+var knockback = Vector2(400, -400)
 
 func _on_timer_timeout():
 	if bomb.fuse == true:
 		var overlapping_bodies = get_overlapping_bodies()
 		if overlapping_bodies.size() > 0:
 			for body in overlapping_bodies:
-				call_knockback(body)
+				apply_knockback(body)
 
-func call_knockback(body: Node2D):
-	entity = body as CharacterBody2D
-	direction = sign(body.position.x - position.x)
-	entity.knockback = true
-	knockback()
-	
-func knockback():
-	if entity.knockback == true:
-		entity.velocity.x = 300 * direction
-		entity.velocity.y = -300
-		entity.knockback = false
+func apply_knockback(body: Node2D):
+	direction = sign(body.global_position.x - global_position.x)
+	body.velocity = knockback

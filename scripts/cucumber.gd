@@ -14,17 +14,14 @@ var bomb : RigidBody2D = null
 var direction = 0
 var bomb_position: Vector2 = Vector2.ZERO
 var has_target: bool = false
-var exploded: bool = false
 var dead: bool = false
-var direction_bomb = null
-var knockback = false
+var friction = 20
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	if exploded == true:
-		pass
+	else:
+		velocity.x = lerpf(velocity.x, 0, friction * delta)
 
 	if has_target:
 		move_towards_bomb(delta)
@@ -38,8 +35,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	has_target = true
 
 func move_towards_bomb(_delta: float) -> void:
-	direction_bomb = sign(bomb_position.x - position.x)
-	velocity.x = direction_bomb * SPEED
+	velocity.x = sign(bomb_position.x - position.x) * SPEED
 
 	if abs(bomb_position.x - position.x) < THRESHOLD:
 		velocity = Vector2.ZERO
