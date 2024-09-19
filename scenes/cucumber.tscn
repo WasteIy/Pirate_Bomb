@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://cnu8785yr8tlf"]
+[gd_scene load_steps=84 format=3 uid="uid://cnu8785yr8tlf"]
 
 [ext_resource type="Script" path="res://scripts/cucumber.gd" id="1_1xxnh"]
 [ext_resource type="Texture2D" uid="uid://rtlwt47h0qm6" path="res://sprites/3-Enemy-Cucumber/8-Blow the wick/1.png" id="1_ii4lp"]
@@ -37,14 +37,22 @@
 [ext_resource type="Texture2D" uid="uid://ckolhc3hitxgo" path="res://sprites/3-Enemy-Cucumber/5-Fall/1.png" id="23_uqu5v"]
 [ext_resource type="Texture2D" uid="uid://cimiyvfy6aw7c" path="res://sprites/3-Enemy-Cucumber/1-Idle/13.png" id="24_siun3"]
 [ext_resource type="Texture2D" uid="uid://ck04q6qftgc2b" path="res://sprites/3-Enemy-Cucumber/5-Fall/2.png" id="24_vv4un"]
+[ext_resource type="Texture2D" uid="uid://d17nxqbwoo05k" path="res://sprites/3-Enemy-Cucumber/9-Hit/1.png" id="25_5i1m5"]
 [ext_resource type="Texture2D" uid="uid://bq6ljkjp6furi" path="res://sprites/3-Enemy-Cucumber/1-Idle/14.png" id="25_yn3cn"]
 [ext_resource type="Texture2D" uid="uid://btcui3vssdlrk" path="res://sprites/3-Enemy-Cucumber/1-Idle/15.png" id="26_8wlax"]
+[ext_resource type="Texture2D" uid="uid://bxddes0ki23lv" path="res://sprites/3-Enemy-Cucumber/9-Hit/2.png" id="26_jvhwb"]
 [ext_resource type="Texture2D" uid="uid://ca2o2ax4o0ar0" path="res://sprites/3-Enemy-Cucumber/1-Idle/16.png" id="27_2o806"]
+[ext_resource type="Texture2D" uid="uid://cse66wvdy7l8t" path="res://sprites/3-Enemy-Cucumber/9-Hit/3.png" id="27_edkdc"]
+[ext_resource type="Texture2D" uid="uid://ndhbprgmyclp" path="res://sprites/3-Enemy-Cucumber/9-Hit/4.png" id="28_37mtq"]
 [ext_resource type="Texture2D" uid="uid://b5k0tnjia2w6y" path="res://sprites/3-Enemy-Cucumber/1-Idle/17.png" id="28_ac2sh"]
+[ext_resource type="Texture2D" uid="uid://dngphsqe62ccb" path="res://sprites/3-Enemy-Cucumber/9-Hit/5.png" id="29_i3xg7"]
 [ext_resource type="Texture2D" uid="uid://b3w7wx5tb8q8l" path="res://sprites/3-Enemy-Cucumber/1-Idle/18.png" id="29_ix4ml"]
 [ext_resource type="Texture2D" uid="uid://cl21jrr6yfkky" path="res://sprites/3-Enemy-Cucumber/1-Idle/19.png" id="30_6kna0"]
+[ext_resource type="Texture2D" uid="uid://dixrcrlbaabmh" path="res://sprites/3-Enemy-Cucumber/9-Hit/6.png" id="30_32x1i"]
 [ext_resource type="Texture2D" uid="uid://b6bvmspkj8qv2" path="res://sprites/3-Enemy-Cucumber/1-Idle/20.png" id="31_5xaqs"]
+[ext_resource type="Texture2D" uid="uid://vflx8vskt0rx" path="res://sprites/3-Enemy-Cucumber/9-Hit/7.png" id="31_llyye"]
 [ext_resource type="Texture2D" uid="uid://vmc23u7ejek0" path="res://sprites/3-Enemy-Cucumber/1-Idle/21.png" id="32_d2rde"]
+[ext_resource type="Texture2D" uid="uid://crsueq876bvhf" path="res://sprites/3-Enemy-Cucumber/9-Hit/8.png" id="32_ekgey"]
 [ext_resource type="Texture2D" uid="uid://b62u6s4ocor0c" path="res://sprites/3-Enemy-Cucumber/1-Idle/22.png" id="33_qyy86"]
 [ext_resource type="Texture2D" uid="uid://bbg75es81xvvq" path="res://sprites/3-Enemy-Cucumber/1-Idle/23.png" id="34_sa6xa"]
 [ext_resource type="Texture2D" uid="uid://xub3el3lvqel" path="res://sprites/3-Enemy-Cucumber/1-Idle/24.png" id="35_v0eud"]
@@ -162,6 +170,35 @@ animations = [{
 }],
 "loop": false,
 "name": &"fall",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_5i1m5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_jvhwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_edkdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_37mtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_i3xg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_32x1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_llyye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ekgey")
+}],
+"loop": false,
+"name": &"hit",
 "speed": 20.0
 }, {
 "frames": [{
@@ -334,7 +371,6 @@ script = ExtResource("1_1xxnh")
 sprite_frames = SubResource("SpriteFrames_liqug")
 animation = &"idle"
 autoplay = "idle"
-frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

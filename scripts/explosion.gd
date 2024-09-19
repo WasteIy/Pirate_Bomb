@@ -6,6 +6,7 @@ extends Area2D
 var entity = null
 var direction = null
 var knockback = Vector2(400, -400)
+var exploded = false
 
 func _on_timer_timeout():
 	if bomb.fuse == true:
@@ -18,3 +19,4 @@ func apply_knockback(body: Node2D):
 	direction = sign(body.global_position.x - global_position.x)
 	body.velocity.x = knockback.x * direction
 	body.velocity.y = knockback.y
+	body.exploded = true
