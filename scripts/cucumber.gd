@@ -36,7 +36,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	bomb_position = bomb.position
 	has_target = true
 
-func move_towards_bomb(delta: float) -> void:
+func move_towards_bomb(_delta: float) -> void:
 	direction_bomb = sign(bomb_position.x - position.x)
 	velocity.x = direction_bomb * SPEED
 
@@ -50,9 +50,8 @@ func update_animation():
 			if velocity.y > 0:
 				if sprite.animation != "fall":
 					sprite.play("fall") 
-			else:
-				if velocity.x != 0:
-					sprite.play("run")
+			elif velocity.x != 0:
+				sprite.play("run")
 	
 	if velocity.x > 0:
 		sprite.flip_h = true

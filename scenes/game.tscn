@@ -1303,4 +1303,4 @@ tile_set = SubResource("TileSet_dad1v")
 position = Vector2(-155, -28)
 
 [node name="Cucumber" parent="." instance=ExtResource("3_sqox7")]
-position = Vector2(190, -29)
+position = Vector2(189, -29)

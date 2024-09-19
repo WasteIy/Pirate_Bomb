@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bi4apqxng6gw"]
+[gd_scene load_steps=26 format=3 uid="uid://bi4apqxng6gw"]
 
 [ext_resource type="Script" path="res://scripts/bomb.gd" id="1_ospgb"]
 [ext_resource type="Texture2D" uid="uid://ceh84c2d5f8ro" path="res://sprites/7-Objects/1-BOMB/1-Bomb Off/1.png" id="1_oxf3h"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://c6bmvt4deie3s" path="res://sprites/7-Objects/1-BOMB/3-Explotion/7.png" id="18_mcl11"]
 [ext_resource type="Texture2D" uid="uid://yx8ww31svr8b" path="res://sprites/7-Objects/1-BOMB/3-Explotion/8.png" id="19_lpgyg"]
 [ext_resource type="Texture2D" uid="uid://xvnj00xpjf0k" path="res://sprites/7-Objects/1-BOMB/3-Explotion/9.png" id="20_ulajv"]
+[ext_resource type="Script" path="res://scripts/explosion.gd" id="22_sdivu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h6yur"]
 animations = [{
@@ -30,7 +31,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"bomb_off",
-"speed": 1.0
+"speed": 0.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -114,12 +115,8 @@ script = ExtResource("1_ospgb")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_h6yur")
-animation = &"bomb_on"
+animation = &"bomb_off"
 autoplay = "bomb_on"
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 10
@@ -130,13 +127,17 @@ shape = SubResource("CircleShape2D_y38f5")
 z_index = 10
 collision_layer = 0
 collision_mask = 4
-monitoring = false
+script = ExtResource("22_sdivu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion"]
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_qi00t")
-disabled = true
+
+[node name="Timer" type="Timer" parent="Explosion"]
+wait_time = 3.0
+autostart = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Explosion" to="." method="_on_explosion_body_entered"]
+[connection signal="timeout" from="Explosion/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Explosion/Timer" to="Explosion" method="_on_timer_timeout"]
