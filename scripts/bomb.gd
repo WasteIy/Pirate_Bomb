@@ -7,9 +7,8 @@ var fuse = true
 
 func _process(_delta):
 	if fuse == false:
+		collision_layer = 16
 		sprite.play("bomb_off")
-		await sprite.animation_finished
-		queue_free()
 
 func _on_timer_timeout() -> void:
 	if fuse == true:

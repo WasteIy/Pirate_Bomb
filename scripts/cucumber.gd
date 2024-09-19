@@ -58,11 +58,11 @@ func update_animation():
 		sprite.flip_h = true
 	elif velocity.x < 0:
 		sprite.flip_h = false
-		
+	
 	if ray_cast_right.is_colliding():
-		sprite.flip_h = true
+			sprite.flip_h = true
 	if ray_cast_left.is_colliding():
-		sprite.flip_h = false
+			sprite.flip_h = false
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "blow":
