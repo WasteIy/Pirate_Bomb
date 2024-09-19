@@ -16,4 +16,5 @@ func _on_timer_timeout():
 
 func apply_knockback(body: Node2D):
 	direction = sign(body.global_position.x - global_position.x)
-	body.velocity = knockback
+	body.velocity.x = knockback.x * direction
+	body.velocity.y = knockback.y
