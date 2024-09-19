@@ -17,6 +17,7 @@ var has_target: bool = false
 var exploded: bool = false
 var dead: bool = false
 var direction_bomb = null
+var knockback = false
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -47,11 +48,13 @@ func move_towards_bomb(_delta: float) -> void:
 
 func update_animation():
 	if dead == false:
-			if velocity.y > 0:
+			if velocity.y > 0 and not is_on_floor():
 				if sprite.animation != "fall":
-					sprite.play("fall") 
+					sprite.play("fall")
 			elif velocity.x != 0:
 				sprite.play("run")
+			elif sprite.animation != "blow": 
+				sprite.play("idle")
 	
 	if velocity.x > 0:
 		sprite.flip_h = true
