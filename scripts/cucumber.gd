@@ -33,6 +33,11 @@ func _physics_process(delta: float) -> void:
 	update_animation()
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	if has_target:
+		if abs(body.global_position.x - global_position.x) > abs(bomb.global_position.x - global_position.x):
+			return
+		else:
+			pass
 	bomb = body
 	bomb_position = bomb.position
 	has_target = true
@@ -56,11 +61,11 @@ func update_animation():
 			elif sprite.animation != "blow": 
 				sprite.play("idle")
 	elif exploded:
-		if health != 0:
+		if health > 0:
 			sprite.play("hit")
 			await sprite.animation_finished
 			exploded = false
-		elif health == 0:
+		elif health <= 0:
 			sprite.play("dead hit")
 			await sprite.animation_finished
 			exploded = false
@@ -79,8 +84,6 @@ func update_animation():
 			sprite.flip_h = true
 	if ray_cast_left.is_colliding():
 			sprite.flip_h = false
-	
-	
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "blow":

@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 const JUMP_VELOCITY = -400.0
 
-var SPEED = 130.0
+var SPEED = 200.0
 var direction = 0
 var bomb_scene = preload("res://scenes/bomb.tscn")
 
