@@ -5,7 +5,7 @@ extends Area2D
 
 var entity = null
 var direction = null
-var knockback = Vector2(400, -400)
+var knockback = Vector2(200, -200)
 var exploded = false
 
 func _on_timer_timeout():
@@ -20,3 +20,4 @@ func apply_knockback(body: Node2D):
 	body.velocity.x = knockback.x * direction
 	body.velocity.y = knockback.y
 	body.exploded = true
+	body.health -= 1
