@@ -360,7 +360,7 @@ animations = [{
 size = Vector2(30, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_slfol"]
-size = Vector2(903, 59)
+size = Vector2(173, 59)
 
 [node name="Cucumber" type="CharacterBody2D"]
 z_index = 2
@@ -386,7 +386,7 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vision"]
 visible = false
 z_index = 10
-position = Vector2(-0.5, 4.5)
+position = Vector2(-2.5, 4.5)
 shape = SubResource("RectangleShape2D_slfol")
 
 [node name="Node2D" type="Node2D" parent="."]

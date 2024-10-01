@@ -1,5 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://dp2u5f52djtlq"]
+[gd_scene load_steps=36 format=3 uid="uid://dp2u5f52djtlq"]
 
+[ext_resource type="Script" path="res://scripts/captain.gd" id="1_3p578"]
 [ext_resource type="Texture2D" uid="uid://brpi5l73kb612" path="res://sprites/5-Enemy-Captain/1-Idle/1.png" id="1_4364b"]
 [ext_resource type="Texture2D" uid="uid://dmnd6s2ynf61i" path="res://sprites/5-Enemy-Captain/1-Idle/2.png" id="2_pb1x4"]
 [ext_resource type="Texture2D" uid="uid://dux67v4okmc6u" path="res://sprites/5-Enemy-Captain/1-Idle/3.png" id="3_c71mb"]
@@ -143,6 +144,7 @@ size = Vector2(48, 67)
 [node name="Captain" type="CharacterBody2D"]
 z_index = 2
 collision_layer = 4
+script = ExtResource("1_3p578")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
