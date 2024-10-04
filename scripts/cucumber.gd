@@ -17,6 +17,7 @@ var dead: bool = false
 var friction = 20
 var exploded = false
 var health = 2
+var is_blowing = false
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -88,8 +89,11 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "blow":
 		bomb.fuse = false
 		sprite.play("idle")
+		is_blowing = false
 
 func blow_fuse():
-	if ray_cast_left.is_colliding() or ray_cast_right.is_colliding():
-		sprite.play("blow")
+	if ray_cast_left.is_colliding() or ray_cast_right.is_colliding() and has_target and !is_blowing:
+		is_blowing = true
 		has_target = false
+		await get_tree().create_timer(1).timeout
+		sprite.play("blow")
