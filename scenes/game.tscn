@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://d0yqldctbt5wg" path="res://scenes/player.tscn" id="1_sucrp"]
 [ext_resource type="Texture2D" uid="uid://demdqf2cxq88e" path="res://sprites/8-Tile-Sets/Fixed Tile-Sets (64-64).png" id="2_8ctr7"]
+[ext_resource type="PackedScene" uid="uid://h0ik0prujb7j" path="res://scenes/pirate.tscn" id="3_147tu"]
 [ext_resource type="PackedScene" uid="uid://cnu8785yr8tlf" path="res://scenes/cucumber.tscn" id="3_sqox7"]
-[ext_resource type="PackedScene" uid="uid://b21nu2xrrswbn" path="res://scenes/bald_pirate.tscn" id="4_xqjuc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_roywi"]
 texture = ExtResource("2_8ctr7")
@@ -1309,9 +1309,8 @@ tile_set = SubResource("TileSet_dad1v")
 shape = SubResource("WorldBoundaryShape2D_k0b5j")
 disabled = true
 
-[node name="Bald Pirate" parent="." instance=ExtResource("4_xqjuc")]
-position = Vector2(-168, -33)
-collision_layer = 0
-
 [node name="Cucumber" parent="." instance=ExtResource("3_sqox7")]
 position = Vector2(170, -34)
+
+[node name="Pirate" parent="." instance=ExtResource("3_147tu")]
+position = Vector2(-158, -34)
